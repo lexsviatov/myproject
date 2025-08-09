@@ -13,6 +13,9 @@ const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 const TELEGRAM_BOT_TOKEN = config.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = config.TELEGRAM_CHAT_ID;
 
+const repoPath = path.resolve(__dirname, "..");
+const BRANCH_FILE = path.resolve(__dirname, ".last_branch");
+
 function runCommand(command, cwd = process.cwd()) {
     return new Promise((resolve, reject) => {
         exec(command, { cwd }, (error, stdout, stderr) => {
@@ -53,29 +56,58 @@ async function sendTelegramMessage(message) {
     }
 }
 
+function getLastBranch() {
+    if (fs.existsSync(BRANCH_FILE)) {
+        return fs.readFileSync(BRANCH_FILE, "utf8").trim();
+    }
+    return null;
+}
+
+function saveLastBranch(branch) {
+    fs.writeFileSync(BRANCH_FILE, branch);
+}
+
 async function autoPushAndNotify() {
     try {
         console.log("=== Запуск auto-commit ===");
 
-        const repoPath = path.resolve(__dirname, "..");
-        const branch = await runCommand("git rev-parse --abbrev-ref HEAD", repoPath);
-        console.log(`Текущая ветка: ${branch}`);
+        const currentBranch = await runCommand("git rev-parse --abbrev-ref HEAD", repoPath);
+        console.log(`Текущая ветка: ${currentBranch}`);
 
-        await runCommand("git add .", repoPath);
+        const lastBranch = getLastBranch();
 
-        const date = new Date().toISOString().replace("T", " ").split(".")[0];
-        await runCommand(`git commit -m "Auto-commit: ${date}"`, repoPath).catch(() => {
-            console.log("Нет изменений для коммита.");
-        });
+        if (lastBranch !== currentBranch) {
+            console.log(`Ветка изменилась: ${lastBranch} -> ${currentBranch}`);
 
-        console.log("Выполняем git push");
-        await runCommand("git push", repoPath);
+            if (currentBranch === "project-structure") {
+                // Добавляем файлы
+                await runCommand("git add .", repoPath);
 
-        console.log("Отправляем уведомление в Telegram");
-        const repoUrl = encodeURI("https://github.com/lexsviatov/myproject");
-        const message = `В репозиторий myproject (${repoUrl}) были внесены изменения в ветку ${branch}. Пожалуйста, просмотри и прокомментируй.`;
+                // Коммит с датой
+                const date = new Date().toISOString().replace("T", " ").split(".")[0];
+                try {
+                    await runCommand(`git commit -m "Auto-commit: ${date}"`, repoPath);
+                } catch {
+                    console.log("Нет изменений для коммита.");
+                }
 
-        await sendTelegramMessage(message);
+                // Пуш
+                console.log("Выполняем git push");
+                await runCommand("git push", repoPath);
+
+                // Отправляем уведомление
+                console.log("Отправляем уведомление в Telegram");
+                const repoUrl = encodeURI("https://github.com/lexsviatov/myproject");
+                const message = `В репозиторий myproject (${repoUrl}) были внесены изменения в ветку ${currentBranch}. Пожалуйста, просмотри и прокомментируй.`;
+                await sendTelegramMessage(message);
+            } else {
+                console.log(`Новая ветка "${currentBranch}" не "project-structure" — уведомление не отправляем.`);
+            }
+
+            saveLastBranch(currentBranch);
+        } else {
+            console.log("Ветка не менялась, уведомление не отправляем");
+        }
 
         console.log("Операция завершена.");
     } catch (error) {
