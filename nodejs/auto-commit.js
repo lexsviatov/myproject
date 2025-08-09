@@ -14,7 +14,10 @@ const TELEGRAM_BOT_TOKEN = config.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = config.TELEGRAM_CHAT_ID;
 
 const repoPath = path.resolve(__dirname, "..");
-const BRANCH_FILE = path.resolve(__dirname, ".last_branch");
+
+// Получаем ветки из аргументов (передаются из branch-watcher.js)
+const oldBranch = process.argv[2];
+const currentBranchArg = process.argv[3];
 
 function runCommand(command, cwd = process.cwd()) {
     return new Promise((resolve, reject) => {
@@ -56,25 +59,16 @@ async function sendTelegramMessage(message) {
     }
 }
 
-function getLastBranch() {
-    if (fs.existsSync(BRANCH_FILE)) {
-        return fs.readFileSync(BRANCH_FILE, "utf8").trim();
-    }
-    return null;
-}
-
-function saveLastBranch(branch) {
-    fs.writeFileSync(BRANCH_FILE, branch);
-}
-
 async function autoPushAndNotify() {
     try {
         console.log("=== Запуск auto-commit ===");
 
-        const currentBranch = await runCommand("git rev-parse --abbrev-ref HEAD", repoPath);
+        // Берём текущую ветку из аргументов, если есть, иначе из git
+        const currentBranch = currentBranchArg || await runCommand("git rev-parse --abbrev-ref HEAD", repoPath);
         console.log(`Текущая ветка: ${currentBranch}`);
 
-        const lastBranch = getLastBranch();
+        // Берём предыдущую ветку из аргументов
+        const lastBranch = oldBranch || null;
 
         if (lastBranch !== currentBranch) {
             console.log(`Ветка изменилась: ${lastBranch} -> ${currentBranch}`);
@@ -103,8 +97,6 @@ async function autoPushAndNotify() {
             } else {
                 console.log(`Новая ветка "${currentBranch}" не "project-structure" — уведомление не отправляем.`);
             }
-
-            saveLastBranch(currentBranch);
         } else {
             console.log("Ветка не менялась, уведомление не отправляем");
         }
