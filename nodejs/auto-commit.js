@@ -38,7 +38,8 @@ async function sendTelegramMessage(message) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 chat_id: TELEGRAM_CHAT_ID,
-                text: message
+                text: message,
+                disable_web_page_preview: true
             })
         });
 
@@ -71,7 +72,7 @@ async function autoPushAndNotify() {
         await runCommand("git push", repoPath);
 
         console.log("Отправляем уведомление в Telegram");
-        const repoUrl = "https://github.com/lexsviatov/myproject";
+        const repoUrl = encodeURI("https://github.com/lexsviatov/myproject");
         const message = `В репозиторий myproject (${repoUrl}) были внесены изменения в ветку ${branch}. Пожалуйста, просмотри и прокомментируй.`;
 
         await sendTelegramMessage(message);
