@@ -23,7 +23,7 @@ module.exports = {
     {
       name: 'branch-watcher',
       script: 'D:/Projects/Work/myproject-scripts/branch-watcher.js',
-      cwd: 'D:/Projects/Work/myproject-scripts',
+      cwd: 'D:/Projects/Work/myproject',
       watch: false,
       autorestart: true
     }
