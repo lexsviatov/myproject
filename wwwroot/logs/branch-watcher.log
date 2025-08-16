@@ -11107,3 +11107,4 @@ fatal: not a git repository (or any of the parent directories): .git
 2025-08-16T13:00:30.928Z | Ошибка git: execSync is not defined
 2025-08-16T13:00:40.937Z | Ошибка git: execSync is not defined
 2025-08-16T13:00:50.945Z | Ошибка git: execSync is not defined
+2025-08-16T13:01:00.960Z | Ошибка git: execSync is not defined
