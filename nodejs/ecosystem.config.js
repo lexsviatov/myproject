@@ -17,8 +17,16 @@ module.exports = {
       script: 'D:/Projects/Work/myproject-scripts/auto-commit.js',
       cwd: 'D:/Projects/Work/myproject-scripts',
       watch: false,
-      autorestart: true  // включаем авто-перезапуск
-      // убрали cron_restart, вместо этого используем setInterval внутри скрипта
+      autorestart: true
+      // setInterval внутри скрипта
+    },
+    {
+      name: 'auto-commit-watcher',
+      script: 'D:/Projects/Work/myproject-scripts/auto-commit-watcher.js',
+      cwd: 'D:/Projects/Work/myproject',
+      watch: false,
+      autorestart: true
+      // реагирует на изменения файлов в репозитории
     },
     {
       name: 'branch-watcher',
