@@ -1,0 +1,85 @@
+﻿
+InputObject                                                                                                            
+-----------                                                                                                            
+# Перейти в корень репозитория                                                                                         
+# Папка для экспорта (не под контролем git)                                                                            
+if (-not (Test-Path $EXPORT_DIR)) {                                                                                    
+    New-Item -ItemType Directory -Path $EXPORT_DIR | Out-Null                                                          
+# Имя файла экспорта с таймстампом                                                                                     
+$OUTPUT_FILE = "$EXPORT_DIR/repo_export_$(Get-Date -Format 'yyyyMMdd_HHmmss').json"                                    
+# Создаём список для результата                                                                                        
+    # Список изменённых файлов относительно main                                                                       
+    $diff = git diff --name-status main $branch 2>$null                                                                
+    $added = @()                                                                                                       
+    $modified = @()                                                                                                    
+    $deleted = @()                                                                                                     
+        php_controllers = @()                                                                                          
+        nodejs          = @()                                                                                          
+        configs         = @()                                                                                          
+        php_services    = @()                                                                                          
+        other           = @()                                                                                          
+        php_models      = @()                                                                                          
+        views           = @()                                                                                          
+            $status = $matches[1]                                                                                      
+            $file = $matches[2]                                                                                        
+            # Пропускаем лишние папки                                                                                  
+                "A" {                                                                                                  
+                    $added += $file                                                                                    
+                    $unique_category = $file.Split('/')[0]                                                             
+                    if ($unique.PSObject.Properties.Name -contains $unique_category) {                                 
+                        $unique.$unique_category += $file                                                              
+                    } else {                                                                                           
+                        $unique.other += $file                                                                         
+                    }                                                                                                  
+                }                                                                                                      
+    # Убираем пустые категории                                                                                         
+    foreach ($cat in $unique.PSObject.Properties.Name) {                                                               
+        if ($unique.$cat.Count -gt 0) {                                                                                
+            $unique_nonempty[$cat] = $unique.$cat -join " "                                                            
+# Создаём словарь различий между ветками                                                                               
+                if ($b1.unique_files.$cat -and $b1.unique_files.$cat -ne $b2.unique_files.$cat) {                      
+                    $uniqueFiles[$cat] = $b1.unique_files.$cat                                                         
+                }                                                                                                      
+        }                                                                                                              
+# Итоговый объект                                                                                                      
+    branches = $result                                                                                                 
+# Сериализация в JSON с минимизацией                                                                                   
+$finalResult | ConvertTo-Json -Compress -Depth 6 | Out-File $OUTPUT_FILE -Encoding UTF8                                
+Write-Output "Export with branch differences saved to $OUTPUT_FILE"                                                    
+# ------------------------------------------------------------                                                         
+# export_git_branches_full.ps1 для AI-слияния                                                                          
+# ------------------------------------------------------------                                                         
+if (-not (Test-Path $EXPORT_DIR)) { New-Item -ItemType Directory -Path $EXPORT_DIR | Out-Null }                        
+$timestamp = Get-Date -Format 'yyyyMMdd_HHmmss'                                                                        
+$OUTPUT_FILE = "$EXPORT_DIR/repo_export_full_$timestamp.json"                                                          
+# Бэкап последнего экспорта                                                                                            
+$lastExport = Get-ChildItem $EXPORT_DIR -Filter "repo_export_*.json" | Sort-Object LastWriteTime -Descending | Selec...
+if ($lastExport) {                                                                                                     
+    $backupFile = "$EXPORT_DIR/backup_$($lastExport.Name)"                                                             
+    Copy-Item $lastExport.FullName $backupFile                                                                         
+    Write-Output "Backup of last export saved to $backupFile"                                                          
+# Сравнение каждой ветки с base branch                                                                                 
+$baseBranch = "origin/project-structure"                                                                               
+    $diff = git diff --name-status $baseBranch $branch 2>$null                                                         
+    $added = @(); $modified = @(); $deleted = @()                                                                      
+        php_controllers = @(); nodejs = @(); configs = @(); php_services = @(); other = @(); php_models = @(); views...
+            $status = $matches[1]; $file = $matches[2]                                                                 
+                "A" { $added += $file; $cat = $file.Split('/')[0]; if ($unique.PSObject.Properties.Name -contains $c...
+    foreach ($cat in $unique.PSObject.Properties.Name) { if ($unique.$cat.Count -gt 0) { $unique_nonempty[$cat] = $u...
+# Подробные различия между ветками                                                                                     
+                if ($b1.unique_files.$cat -and $b1.unique_files.$cat -ne $b2.unique_files.$cat) { $uniqueFiles[$cat]...
+# Добавим общий diff для AI: base_branch → остальные ветки                                                             
+$branchDiffsSummary = @{}                                                                                              
+foreach ($branch in $branches) {                                                                                       
+    if ($branch -ne $baseBranch) {                                                                                     
+        $branchDiffsSummary[$branch] = git diff --name-status $baseBranch $branch | ForEach-Object { $_.Trim() }       
+                                                                                                                       
+    base_branch        = $baseBranch                                                                                   
+    branches           = $result                                                                                       
+    diff_summary       = $branchDiffsSummary                                                                           
+}                                                                                                                      
+                                                                                                                       
+$finalResult | ConvertTo-Json -Compress -Depth 8 | Out-File $OUTPUT_FILE -Encoding UTF8                                
+Write-Output "Full AI export saved to $OUTPUT_FILE"                                                                    
+
+
