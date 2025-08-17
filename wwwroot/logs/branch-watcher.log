@@ -1,73 +1,8 @@
-2025-08-17T01:15:12.258Z | Наблюдаем за сменой ветки...
-2025-08-17T01:15:12.263Z | Ошибка git: execSync is not defined
-2025-08-17T01:15:22.273Z | Ошибка git: execSync is not defined
-2025-08-17T01:15:32.282Z | Ошибка git: execSync is not defined
-2025-08-17T01:15:42.303Z | Ошибка git: execSync is not defined
-2025-08-17T01:15:52.306Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:02.310Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:12.325Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:22.334Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:32.349Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:42.361Z | Ошибка git: execSync is not defined
-2025-08-17T01:16:52.371Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:02.375Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:12.391Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:22.404Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:32.412Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:42.417Z | Ошибка git: execSync is not defined
-2025-08-17T01:17:52.421Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:02.423Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:12.428Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:22.444Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:32.456Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:42.461Z | Ошибка git: execSync is not defined
-2025-08-17T01:18:52.464Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:02.466Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:12.469Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:22.473Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:32.479Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:42.494Z | Ошибка git: execSync is not defined
-2025-08-17T01:19:52.501Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:02.508Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:12.522Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:22.526Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:32.538Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:42.549Z | Ошибка git: execSync is not defined
-2025-08-17T01:20:52.564Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:02.573Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:12.589Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:22.601Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:32.614Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:42.625Z | Ошибка git: execSync is not defined
-2025-08-17T01:21:52.634Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:02.640Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:12.655Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:22.663Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:32.673Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:42.674Z | Ошибка git: execSync is not defined
-2025-08-17T01:22:52.681Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:02.690Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:12.691Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:22.703Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:32.718Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:42.732Z | Ошибка git: execSync is not defined
-2025-08-17T01:23:52.736Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:02.744Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:12.751Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:22.761Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:32.764Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:42.771Z | Ошибка git: execSync is not defined
-2025-08-17T01:24:52.781Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:02.790Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:12.796Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:22.810Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:32.813Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:42.827Z | Ошибка git: execSync is not defined
-2025-08-17T01:25:52.831Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:02.841Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:11.269Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:21.275Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:31.277Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:41.292Z | Ошибка git: execSync is not defined
-2025-08-17T01:26:51.294Z | Ошибка git: execSync is not defined
-2025-08-17T01:27:01.309Z | Ошибка git: execSync is not defined
+2025-08-17T01:29:09.881Z | Наблюдаем за сменой ветки...
+2025-08-17T01:29:09.954Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:29:20.002Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:29:30.042Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:29:40.082Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:29:50.124Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:30:00.165Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:30:10.207Z | Ошибка git: exec(...).trim is not a function
