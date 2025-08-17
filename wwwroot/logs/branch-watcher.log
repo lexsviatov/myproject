@@ -1,14 +1,7 @@
-2025-08-17T01:29:09.881Z | Наблюдаем за сменой ветки...
-2025-08-17T01:29:09.954Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:29:20.002Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:29:30.042Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:29:40.082Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:29:50.124Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:00.165Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:10.207Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:20.245Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:30.290Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:40.339Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:30:50.388Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:31:00.430Z | Ошибка git: exec(...).trim is not a function
-2025-08-17T01:31:10.505Z | Ошибка git: exec(...).trim is not a function
+2025-08-17T01:47:54.177Z | Наблюдаем за сменой ветки...
+2025-08-17T01:47:54.620Z | Текущая сохранённая ветка: test-branch
+2025-08-17T01:48:04.903Z | Ветка не изменилась: test-branch
+2025-08-17T01:48:15.186Z | Ветка не изменилась: test-branch
+2025-08-17T01:48:25.475Z | Ветка не изменилась: test-branch
+2025-08-17T01:48:35.774Z | Ветка не изменилась: test-branch
+2025-08-17T01:48:46.019Z | Ветка не изменилась: test-branch
