@@ -13,14 +13,6 @@ module.exports = {
       autorestart: true
     },
     {
-      name: 'auto-commits',
-      script: 'D:/Projects/Work/myproject-scripts/auto-commit.js',
-      cwd: 'D:/Projects/Work/myproject-scripts',
-      watch: false,
-      autorestart: true
-      // setInterval внутри скрипта
-    },
-    {
       name: 'auto-commit-watcher',
       script: 'D:/Projects/Work/myproject-scripts/auto-commit-watcher.js',
       cwd: 'D:/Projects/Work/myproject',
