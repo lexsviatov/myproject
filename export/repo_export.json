@@ -1,0 +1,296 @@
+﻿{
+    "branches":  [
+                     {
+                         "branch":  "main",
+                         "summary":  {
+                                         "added":  0,
+                                         "unique_files":  0,
+                                         "deleted":  0,
+                                         "modified":  0
+                                     },
+                         "added":  [
+
+                                   ],
+                         "modified":  [
+
+                                      ],
+                         "deleted":  [
+
+                                     ],
+                         "unique_files":  {
+                                              "configs":  [
+
+                                                          ],
+                                              "php_models":  [
+
+                                                             ],
+                                              "php_services":  [
+
+                                                               ],
+                                              "nodejs":  [
+
+                                                         ],
+                                              "other":  [
+
+                                                        ],
+                                              "views":  [
+
+                                                        ],
+                                              "php_controllers":  [
+
+                                                                  ]
+                                          }
+                     },
+                     {
+                         "branch":  "project-structure",
+                         "summary":  {
+                                         "added":  1,
+                                         "unique_files":  1,
+                                         "deleted":  1,
+                                         "modified":  3
+                                     },
+                         "added":  [
+                                       "nodejs/.last_branch"
+                                   ],
+                         "modified":  [
+                                          "nodejs/ecosystem.config.js",
+                                          "nodejs/package-lock.json",
+                                          "nodejs/package.json"
+                                      ],
+                         "deleted":  [
+                                         "nodejs/auto-commit.js"
+                                     ],
+                         "unique_files":  {
+                                              "php_controllers":  [
+
+                                                                  ],
+                                              "nodejs":  [
+                                                             "nodejs/.last_branch"
+                                                         ],
+                                              "configs":  [
+
+                                                          ],
+                                              "php_services":  [
+
+                                                               ],
+                                              "other":  [
+
+                                                        ],
+                                              "php_models":  [
+
+                                                             ],
+                                              "views":  [
+
+                                                        ]
+                                          }
+                     },
+                     {
+                         "branch":  "test-branch",
+                         "summary":  {
+                                         "added":  7,
+                                         "unique_files":  7,
+                                         "deleted":  3,
+                                         "modified":  3
+                                     },
+                         "added":  [
+                                       ".gitignore",
+                                       "bash.exe.stackdump",
+                                       "nodejs/.last_branch",
+                                       "repo_full_export.7z",
+                                       "repo_full_export.txt",
+                                       "repo_full_export.zip",
+                                       "repo_unique_changes.txt"
+                                   ],
+                         "modified":  [
+                                          "nodejs/ecosystem.config.js",
+                                          "nodejs/package-lock.json",
+                                          "nodejs/package.json"
+                                      ],
+                         "deleted":  [
+                                         "nodejs/auto-commit copy.js",
+                                         "nodejs/auto-commit.js",
+                                         "nodejs/auto-commit_h.js"
+                                     ],
+                         "unique_files":  {
+                                              "php_controllers":  [
+
+                                                                  ],
+                                              "nodejs":  [
+                                                             "nodejs/.last_branch"
+                                                         ],
+                                              "configs":  [
+
+                                                          ],
+                                              "php_services":  [
+
+                                                               ],
+                                              "other":  [
+                                                            ".gitignore",
+                                                            "bash.exe.stackdump",
+                                                            "repo_full_export.7z",
+                                                            "repo_full_export.txt",
+                                                            "repo_full_export.zip",
+                                                            "repo_unique_changes.txt"
+                                                        ],
+                                              "php_models":  [
+
+                                                             ],
+                                              "views":  [
+
+                                                        ]
+                                          }
+                     }
+                 ],
+    "branch_differences":  {
+                               "main":  {
+                                            "project-structure":  {
+                                                                      "nodejs":  {
+
+                                                                                 },
+                                                                      "php_services":  {
+
+                                                                                       },
+                                                                      "other":  {
+
+                                                                                },
+                                                                      "php_controllers":  {
+
+                                                                                          },
+                                                                      "views":  {
+
+                                                                                },
+                                                                      "configs":  {
+
+                                                                                  },
+                                                                      "php_models":  {
+
+                                                                                     }
+                                                                  },
+                                            "test-branch":  {
+                                                                "nodejs":  {
+
+                                                                           },
+                                                                "php_services":  {
+
+                                                                                 },
+                                                                "other":  {
+
+                                                                          },
+                                                                "php_controllers":  {
+
+                                                                                    },
+                                                                "views":  {
+
+                                                                          },
+                                                                "configs":  {
+
+                                                                            },
+                                                                "php_models":  {
+
+                                                                               }
+                                                            }
+                                        },
+                               "project-structure":  {
+                                                         "main":  {
+                                                                      "nodejs":  "nodejs/.last_branch",
+                                                                      "php_services":  {
+
+                                                                                       },
+                                                                      "other":  {
+
+                                                                                },
+                                                                      "php_controllers":  {
+
+                                                                                          },
+                                                                      "views":  {
+
+                                                                                },
+                                                                      "configs":  {
+
+                                                                                  },
+                                                                      "php_models":  {
+
+                                                                                     }
+                                                                  },
+                                                         "test-branch":  {
+                                                                             "nodejs":  {
+
+                                                                                        },
+                                                                             "php_services":  {
+
+                                                                                              },
+                                                                             "other":  {
+
+                                                                                       },
+                                                                             "php_controllers":  {
+
+                                                                                                 },
+                                                                             "views":  {
+
+                                                                                       },
+                                                                             "configs":  {
+
+                                                                                         },
+                                                                             "php_models":  {
+
+                                                                                            }
+                                                                         }
+                                                     },
+                               "test-branch":  {
+                                                   "project-structure":  {
+                                                                             "nodejs":  {
+
+                                                                                        },
+                                                                             "php_services":  {
+
+                                                                                              },
+                                                                             "other":  [
+                                                                                           ".gitignore",
+                                                                                           "bash.exe.stackdump",
+                                                                                           "repo_full_export.7z",
+                                                                                           "repo_full_export.txt",
+                                                                                           "repo_full_export.zip",
+                                                                                           "repo_unique_changes.txt"
+                                                                                       ],
+                                                                             "php_controllers":  {
+
+                                                                                                 },
+                                                                             "views":  {
+
+                                                                                       },
+                                                                             "configs":  {
+
+                                                                                         },
+                                                                             "php_models":  {
+
+                                                                                            }
+                                                                         },
+                                                   "main":  {
+                                                                "nodejs":  "nodejs/.last_branch",
+                                                                "php_services":  {
+
+                                                                                 },
+                                                                "other":  [
+                                                                              ".gitignore",
+                                                                              "bash.exe.stackdump",
+                                                                              "repo_full_export.7z",
+                                                                              "repo_full_export.txt",
+                                                                              "repo_full_export.zip",
+                                                                              "repo_unique_changes.txt"
+                                                                          ],
+                                                                "php_controllers":  {
+
+                                                                                    },
+                                                                "views":  {
+
+                                                                          },
+                                                                "configs":  {
+
+                                                                            },
+                                                                "php_models":  {
+
+                                                                               }
+                                                            }
+                                               }
+                           }
+}
