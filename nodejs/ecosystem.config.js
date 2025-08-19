@@ -35,8 +35,8 @@ module.exports = {
     },
     {
       name: 'myproject-app',
-      script: 'index.js',
-      cwd: 'D:/Projects/Work/myproject/nodejs',
+      script: 'D:/Gitlab/zzz/nodejs/mvc-nodejs/index.js',
+      cwd: 'D:/Gitlab/zzz/nodejs/mvc-nodejs',
       watch: true,
       autorestart: true
     }
